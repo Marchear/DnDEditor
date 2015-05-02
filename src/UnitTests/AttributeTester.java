@@ -32,30 +32,24 @@ public class AttributeTester {
 
 	@Test
 	public void testSetGetStats() {
-		Pluto = new CharacterStats();
+		Pluto = new CharacterStats(16,15,14,13,12,11);
 		int stat = 0;
 
-		Pluto.setStr(16);
 		stat = Pluto.getStr();
 		assertEquals(16, stat);
 
-		Pluto.setDex(15);
 		stat = Pluto.getDex();
 		assertEquals(15, stat);
 
-		Pluto.setCon(14);
 		stat = Pluto.getCon();
 		assertEquals(14, stat);
 
-		Pluto.setInt(13);
 		stat = Pluto.getInt();
 		assertEquals(13, stat);
 
-		Pluto.setWis(12);
 		stat = Pluto.getWis();
 		assertEquals(12, stat);
 
-		Pluto.setCha(11);
 		stat = Pluto.getCha();
 		assertEquals(11, stat);
 
@@ -64,50 +58,40 @@ public class AttributeTester {
 
 	@Test(expected=IllegalArgumentException.class)
 	public void testInvalidStats() {
-		Pluto = new CharacterStats();
+		Pluto = new CharacterStats(-2,10,11,12,13,15);
 
-		Pluto.setStr(-2);
 	}
 
 	@Test
 	public void testStatBonuses() {
-		Pluto = new CharacterStats();
+		Pluto = new CharacterStats(16,14,14,10,10,13);
 		int Bonus = 0;
 
-		Pluto.setStr(16);
-		Pluto.setDex(14);
-		Pluto.setCon(14);
-		Pluto.setInt(10);
-		Pluto.setWis(10);
-		Pluto.setCha(13);
 
 		Bonus = Pluto.getStrBonus();
 		assertEquals(3,Bonus);
-		Pluto.setStr(14);
-		Bonus = Pluto.getStrBonus();
-		assertEquals(2,Bonus);
 		
-		Pluto.setStr(1);
+		Pluto = new CharacterStats(1,14,14,10,10,13);
 		Bonus = Pluto.getStrBonus();
 		assertEquals(-5,Bonus);
 		
-		Pluto.setStr(2);
+		Pluto = new CharacterStats(2,14,14,10,10,13);
 		Bonus = Pluto.getStrBonus();
 		assertEquals(-4,Bonus);
 		
-		Pluto.setStr(3);
+		Pluto = new CharacterStats(3,14,14,10,10,13);
 		Bonus = Pluto.getStrBonus();
 		assertEquals(-4,Bonus);
 		
-		Pluto.setStr(4);
+		Pluto = new CharacterStats(4,14,14,10,10,13);
 		Bonus = Pluto.getStrBonus();
 		assertEquals(-3,Bonus);
 		
-		Pluto.setStr(9);
+		Pluto = new CharacterStats(9,14,14,10,10,13);
 		Bonus = Pluto.getStrBonus();
 		assertEquals(-1,Bonus);
 		
-		Pluto.setStr(35);
+		Pluto = new CharacterStats(35,14,14,10,10,13);
 		Bonus = Pluto.getStrBonus();
 		assertEquals(12,Bonus);
 		

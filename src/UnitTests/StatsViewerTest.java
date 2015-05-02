@@ -24,7 +24,7 @@ public class StatsViewerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		Pluto = new CharacterStats(); 
+		Pluto = new CharacterStats(10,10,10,10,10,10); 
 	}
 
 	@After
