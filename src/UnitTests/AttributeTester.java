@@ -67,7 +67,7 @@ public class AttributeTester {
 		Pluto = new CharacterStats(16,14,14,10,10,13);
 		int Bonus = 0;
 
-// 		comments and stuff!
+// 		comments and stuff! And stuff!
 		Bonus = Pluto.getStrBonus();
 		assertEquals(3,Bonus);
 		
