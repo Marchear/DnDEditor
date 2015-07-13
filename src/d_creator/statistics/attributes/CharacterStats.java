@@ -77,6 +77,33 @@ public class CharacterStats {
 				
 		return getGenericBonus(Str);
 	}
+	
+	public int getDexBonus() {
+		
+		return getGenericBonus(Dex);
+	}
+	
+	public int getConBonus() {
+		
+		return getGenericBonus(Con);
+	}
+	
+	public int getIntBonus() {
+		
+		return getGenericBonus(Int);
+	}
+	
+	public int getWisBonus() {
+		
+		return getGenericBonus(Wis);
+	}
+
+	public int getChaBonus() {
+		
+		return getGenericBonus(Cha);
+	}
+
+
 
 
 	private int getGenericBonus(int stat) {
